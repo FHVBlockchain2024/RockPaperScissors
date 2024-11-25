@@ -60,12 +60,12 @@ const abi = require('./artifacts/contracts/RockPaperScissors.sol/RockPaperScisso
 const contractAddress = "0xaEC0A61DbEa0B04354465e835FD62Eca25e2A785";
 ```
 
-**To get the signature: **
+**To get the signer:**
 ```javascript
 signer = await ethers.provider.getSigner();
 ```
 
-**To call the contract with the signature: **
+**To call the contract with signer:**
 ```javascript
 game = new ethers.Contract(contractAddress, abi, signer);
 ```
