@@ -1,13 +1,21 @@
-#Rock Paper Scissors
+# Rock Paper Scissors
 It is a simple rock paper scissors game against the computer.
 You can play, when ever you want.
 
-#Contract Address on sepolia
+---
+
+## Contract Details
+
+- **Contract Address on Sepolia**:
 '0xaEC0A61DbEa0B04354465e835FD62Eca25e2A785'
 
-#Basic Interaction Instructions
+---
 
-Interact Using CLI:
+## Basic Interaction Instructions
+
+### Interact Using CLI:
+Run the following command to open the Hardhat console:
+```bash
 npx hardhat console --network sepolia 
 
 Call the play function with a move (1 for Rock, 2 for Paper, 3 for Scissors).
