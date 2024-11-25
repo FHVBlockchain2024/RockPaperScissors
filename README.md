@@ -25,7 +25,8 @@ Scissors beats Paper
 ### 🔧 Interact Using CLI
 Run the following command to open the Hardhat console:
 ```bash
-npx hardhat console --network sepolia 
+npx hardhat console --network sepolia
+```
 
 ---
 
@@ -50,26 +51,41 @@ After playing, call the getResult function to see the result of your move.
 ## A simple example of how to interact with the network:
 
 **To load the abi:**
+```javascript
 const abi = require('./artifacts/contracts/RockPaperScissors.sol/RockPaperScissors.json').abi;
+```
 
 **To call address:**
+```javascript
 const contractAddress = "0xaEC0A61DbEa0B04354465e835FD62Eca25e2A785";
+```
 
 **To get the signature: **
+```javascript
 signer = await ethers.provider.getSigner();
+```
 
 **To call the contract with the signature: **
+```javascript
 game = new ethers.Contract(contractAddress, abi, signer);
+```
 
 **To create the move:**
+```javascript
 const playerMove = <yourNumber>; //1 for Rock, 2 for Papers, 3 for Scissors
+```
 
 **To call the game:**
+```javascript
 var play = await game.play(playerMove, {value: ethers.parseEther("0.02")});
+```
 
 **To call the result:**
+```javascript
 var result = await game.getResult();
+```
 
 **To return the result:**
+```javascript
 result
-
+```
