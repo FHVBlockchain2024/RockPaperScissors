@@ -1,43 +1,75 @@
-# Rock Paper Scissors
-It is a simple rock paper scissors game against the computer.
-You can play, when ever you want.
+# 🪨 Rock Paper Scissors ✂️
+
+A simple **rock-paper-scissors** game where you play against the computer.  
+You can play anytime and test your luck or strategy!
 
 ---
 
-## Contract Details
+**Rules**
+The game automatically generates a move for the computer and determines the winner based on the rules:
+Rock beats Scissors
+Paper beats Rock
+Scissors beats Paper
+
+---
+
+## 🚀 Contract Details
 
 - **Contract Address on Sepolia**:
 '0xaEC0A61DbEa0B04354465e835FD62Eca25e2A785'
 
 ---
 
-## Basic Interaction Instructions
+## 📜 Basic Interaction Instructions
 
-### Interact Using CLI:
+### 🔧 Interact Using CLI
 Run the following command to open the Hardhat console:
 ```bash
 npx hardhat console --network sepolia 
 
-Call the play function with a move (1 for Rock, 2 for Paper, 3 for Scissors).
-It needs more than 0.001 ether
-To see the result call the getResult function
+---
 
-A simple example of how to interact with the network:
+**Simple Usage**
 
-to load the abi:
+Call the play function with your chosen move:
+
+1 for Rock
+
+2 for Paper
+
+3 for Scissors
+
+**Note:** 
+Ensure you send more than 0.001 ether when calling the function.
+Make sure your wallet on Sepolia has enough Ether to cover the gas fees and game cost.
+
+After playing, call the getResult function to see the result of your move.
+
+---
+
+## A simple example of how to interact with the network:
+
+**To load the abi:**
 const abi = require('./artifacts/contracts/RockPaperScissors.sol/RockPaperScissors.json').abi;
-the address:
+
+**To call address:**
 const contractAddress = "0xaEC0A61DbEa0B04354465e835FD62Eca25e2A785";
-to get the signature
+
+**To get the signature: **
 signer = await ethers.provider.getSigner();
-to call the contract with the signature
+
+**To call the contract with the signature: **
 game = new ethers.Contract(contractAddress, abi, signer);
-to create the move
+
+**To create the move:**
 const playerMove = <yourNumber>; //1 for Rock, 2 for Papers, 3 for Scissors
-to call the game:
+
+**To call the game:**
 var play = await game.play(playerMove, {value: ethers.parseEther("0.02")});
-to call the result:
+
+**To call the result:**
 var result = await game.getResult();
-to return the result:
+
+**To return the result:**
 result
 
